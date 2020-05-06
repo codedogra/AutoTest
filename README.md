@@ -1,2 +1,2 @@
 # AutoTest
-This is Testing Auto Cases
+This is Testing Auto Cases for Azure
