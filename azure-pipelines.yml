@@ -1,4 +1,9 @@
 # Python package
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    addToPath: true
+    architecture: 'x64'
 # Create and test a Python package on multiple Python versions.
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
@@ -7,6 +12,10 @@ trigger:
 - master
 
 pool:
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'filePath'
+    scriptPath: '- script: python src/Test1.py'
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
