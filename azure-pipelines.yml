@@ -3,4 +3,12 @@ steps:
   inputs:
     versionSpec: '3.8'
 
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: |
+      print('This is try pipeline')
+
+
+
 - script: python src/Test1.py
