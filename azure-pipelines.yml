@@ -10,5 +10,10 @@ steps:
       print('This is try pipeline')
 
 
-
-- script: python src/Test1.py
+# Python script
+# Run a Python file or inline script
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'filePath'
+    scriptPath: '$(System.DefaultWorkingDirectory)'
+    script: python src/Test1.py
